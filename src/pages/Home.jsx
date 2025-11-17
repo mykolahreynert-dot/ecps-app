@@ -8,19 +8,19 @@ function Home() {
       <section className="grid gap-6 md:grid-cols-2 items-center">
         <div>
           <h1 className="text-3xl md:text-4xl font-bold text-slate-900">
-            European quality care for homes, guests & seniors in Sarasota.
+            European-quality care for your home, guests & loved ones in Sarasota.
           </h1>
           <p className="mt-4 text-slate-700">
-            We support homeowners, snowbirds, Airbnb hosts and seniors with
-            reliable cleaning, property watch and non-medical assistance across
-            Sarasota, Bradenton and Lakewood Ranch.
+            We help homeowners, snowbirds, Airbnb hosts and seniors with
+            reliable cleaning, property watch, and non-medical assistance
+            throughout Sarasota, Bradenton and Lakewood Ranch.
           </p>
           <div className="mt-6 flex flex-wrap gap-3">
             <Link
               to="/services"
               className="inline-flex items-center rounded-md bg-blue-600 px-4 py-2 text-sm font-semibold text-white hover:bg-blue-700"
             >
-              View services
+              Explore services
             </Link>
             <Link
               to="/booking"
@@ -38,8 +38,9 @@ function Home() {
           </h2>
           <ul className="list-disc pl-5 space-y-1">
             <li>European attention to detail and reliability.</li>
-            <li>Clear communication in English, German, Russian, Ukrainian.</li>
-            <li>Flexible solutions for residents, snowbirds and Airbnb hosts.</li>
+            <li>Clear communication in English, German, Russian and Ukrainian.</li>
+            <li>Flexible support for residents, snowbirds and short-term rental hosts.</li>
+            <li>Trust-based service with consistent quality and clear expectations.</li>
           </ul>
         </div>
       </section>
@@ -52,20 +53,20 @@ function Home() {
         <div className="grid gap-4 md:grid-cols-3">
           <div className="rounded-lg border bg-white p-4 text-sm">
             <h3 className="font-semibold text-slate-900 mb-1">
-              Residential & Airbnb Cleaning
+              Residential &amp; Airbnb Cleaning
             </h3>
             <p className="text-slate-700">
-              From regular upkeep to deep move-in / move-out and turnover
-              service for short-term rentals.
+              Professional upkeep for homes, condos and short-term rentals —
+              from routine cleaning to deep cleans and turnover service.
             </p>
           </div>
           <div className="rounded-lg border bg-white p-4 text-sm">
             <h3 className="font-semibold text-slate-900 mb-1">
-              Property Watch & Concierge
+              Property Watch &amp; Concierge
             </h3>
             <p className="text-slate-700">
-              Visual inspections, basic coordination and key-holder service
-              while you are away.
+              Peace of mind while you are away: visual inspections, key-holder
+              service and coordination of simple tasks or contractor access.
             </p>
           </div>
           <div className="rounded-lg border bg-white p-4 text-sm">
@@ -73,7 +74,8 @@ function Home() {
               Elderly Assistance (non-medical)
             </h3>
             <p className="text-slate-700">
-              Respectful support with daily tasks and digital help for seniors.
+              Respectful, patient help for seniors with everyday tasks,
+              companionship and step-by-step digital assistance.
             </p>
           </div>
         </div>
