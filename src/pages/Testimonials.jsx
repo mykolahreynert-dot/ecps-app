@@ -8,9 +8,7 @@ function Testimonials() {
           Client feedback
         </h1>
         <p className="mt-2 text-slate-700 text-sm md:text-base">
-          In this project phase, testimonials are illustrative. Over time, you
-          can replace them with real quotes from your clients in Sarasota,
-          Bradenton and Lakewood Ranch.
+          
         </p>
       </div>
 
