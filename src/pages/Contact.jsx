@@ -39,9 +39,9 @@ function Contact() {
           <p>
             <span className="font-medium">Preferred working hours:</span>
             <br />
-            Monday – Friday, 9:00 – 18:00
+            Monday – Sunday, 9:00 – 18:00
             <br />
-            Weekend visits available by agreement.
+            
           </p>
         </section>
 
