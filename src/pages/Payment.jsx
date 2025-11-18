@@ -36,7 +36,7 @@ function Payment() {
     <div className="space-y-6">
       <div>
         <h1 className="text-2xl font-bold text-slate-900">
-          Standard packages & payment
+          Standard packages &amp; payment
         </h1>
         <p className="mt-2 text-slate-700 text-sm md:text-base">
           Below are example packages that can later be connected to Stripe
@@ -49,13 +49,13 @@ function Payment() {
         {packages.map((pkg) => (
           <div
             key={pkg.name}
-            className="rounded-xl border bg-white p-5 shadow-sm flex flex-col justify-between"
+            className="rounded-xl border bg-white p-5 shadow-sm flex flex-col justify-between hover:border-brand-secondary hover:shadow-md transition"
           >
             <div>
               <h2 className="text-lg font-semibold text-slate-900">
                 {pkg.name}
               </h2>
-              <p className="mt-1 text-blue-600 font-semibold text-sm">
+              <p className="mt-1 text-brand-secondary font-semibold text-sm">
                 {pkg.price}
               </p>
               <p className="mt-2 text-sm text-slate-700">{pkg.description}</p>
@@ -65,7 +65,7 @@ function Payment() {
                 href={pkg.stripeUrl}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center rounded-md bg-blue-600 px-4 py-2 text-sm font-semibold text-white hover:bg-blue-700 disabled:opacity-50"
+                className="inline-flex items-center rounded-md bg-brand-secondary px-4 py-2 text-sm font-semibold text-white hover:bg-brand-secondaryDark disabled:opacity-50 transition"
               >
                 Pay with Stripe (placeholder)
               </a>

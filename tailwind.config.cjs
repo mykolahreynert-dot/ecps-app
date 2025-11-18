@@ -5,7 +5,16 @@ module.exports = {
     "./src/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        brand: {
+          primary: "#0D9488",        // teal
+          primaryDark: "#0F766E",    // darker teal
+          secondary: "#DDAA38",      // warm gold
+          secondaryDark: "#C3922F",  // darker gold
+        },
+      },
+    },
   },
   plugins: [],
-};
+}

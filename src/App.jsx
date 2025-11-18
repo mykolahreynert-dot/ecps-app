@@ -8,6 +8,7 @@ import Booking from "./pages/Booking.jsx";
 import Payment from "./pages/Payment.jsx";
 import Testimonials from "./pages/Testimonials.jsx";
 import About from "./pages/About.jsx";
+import Contact from "./pages/Contact.jsx";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path="/payment" element={<Payment />} />
         <Route path="/testimonials" element={<Testimonials />} />
         <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
       </Routes>
     </Layout>
   );

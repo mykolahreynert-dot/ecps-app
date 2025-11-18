@@ -60,7 +60,7 @@ function Services() {
         {services.map((service) => (
           <div
             key={service.title}
-            className="rounded-lg border bg-white p-4 shadow-sm"
+            className="rounded-lg border bg-white p-4 shadow-sm hover:border-brand-secondary hover:shadow-md transition"
           >
             <h2 className="text-lg font-semibold text-slate-900">
               {service.title}
