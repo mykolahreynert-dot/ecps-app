@@ -82,7 +82,7 @@ function Contact() {
               href="mailto:info-europeancare@gmail.com"
               className="text-brand-primary hover:underline"
             >
-              info-europeancare@gmail.com
+              info.europeancare@gmail.com
             </a>
           </p>
         </section>
