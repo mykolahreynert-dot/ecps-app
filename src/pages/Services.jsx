@@ -47,13 +47,12 @@ function Services() {
 
   return (
     <div>
-      <h1 className="text-2xl font-bold text-slate-900 mb-4">
-        Our services
-      </h1>
+      <h1 className="text-2xl font-bold text-slate-900 mb-4">Our services</h1>
       <p className="mb-6 text-slate-700 text-sm md:text-base">
         We support homeowners, landlords, snowbirds, seniors and Airbnb hosts
-        across the Sarasota area. Every service is delivered with care,
-        professionalism and European-standard attention to detail.
+        across the Sarasota/Bradenton/Venice and Tampa Bay area. Every service
+        is delivered with care, professionalism and European-standard attention
+        to detail.
       </p>
 
       <div className="grid gap-4 md:grid-cols-2">
@@ -65,9 +64,7 @@ function Services() {
             <h2 className="text-lg font-semibold text-slate-900">
               {service.title}
             </h2>
-            <p className="mt-2 text-sm text-slate-700">
-              {service.description}
-            </p>
+            <p className="mt-2 text-sm text-slate-700">{service.description}</p>
             <p className="mt-1 text-xs text-slate-500">{service.details}</p>
           </div>
         ))}

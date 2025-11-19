@@ -9,7 +9,7 @@ function About() {
       <p className="text-slate-700 text-sm md:text-base">
         European Care &amp; Property Services was created to provide reliable,
         trust-based support for homeowners, families, seniors and short-term
-        rental owners in the Sarasota/Bradenton/Venice region. 
+        rental owners in the Sarasota/Bradenton/Venice and Tampa Bay region.
       </p>
 
       <p className="text-slate-700 text-sm md:text-base">
@@ -21,10 +21,11 @@ function About() {
       </p>
 
       <p className="text-slate-700 text-sm md:text-base">
-        Whether you are a snowbird who needs someone to watch over your property,
-        an Airbnb host looking for a trustworthy turnover partner, a busy family
-        that needs regular cleaning support, or an aging parent who would benefit
-        from respectful assistance and digital help — we are here to help.
+        Whether you are a snowbird who needs someone to watch over your
+        property, an Airbnb host looking for a trustworthy turnover partner, a
+        busy family that needs regular cleaning support, or an aging parent who
+        would benefit from respectful assistance and digital help — we are here
+        to help.
       </p>
 
       <div className="mt-4 rounded-lg border bg-white p-4 text-sm text-slate-700">
