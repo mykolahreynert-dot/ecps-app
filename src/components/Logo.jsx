@@ -2,8 +2,8 @@
 function Logo() {
   return (
     <svg
-      width="190"
-      height="55"
+      width="230"
+      height="65"
       viewBox="0 0 260 60"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -31,7 +31,7 @@ function Logo() {
         fontWeight="500"
         fill="#444"
       >
-        & Home Services
+        & Property Services
       </text>
     </svg>
   );

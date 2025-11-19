@@ -6,7 +6,7 @@ function Contact() {
       <div className="space-y-2">
         <h1 className="text-2xl font-bold text-slate-900">Contact</h1>
         <p className="text-slate-700 text-sm md:text-base">
-          You can reach European Care &amp; Home Services easily using the
+          You can reach European Care &amp; Property Services easily using the
           contact information below. We are happy to answer questions, help you
           understand available services, and support you with bookings.
         </p>
@@ -29,7 +29,7 @@ function Contact() {
           <p>
             <span className="font-medium">Service area:</span>
             <br />
-            Bradenton • Venice • North Port • Sarasota • Tampa Bay area
+            Sarasota/Bradenton • Venice • North Port • Tampa Bay area
             <br />
             (expanded areas coming soon)
           </p>
@@ -75,7 +75,7 @@ function Contact() {
             <span className="font-medium">Email (all matters):</span>
             <br />
             <a
-              href="mailto:info-europeancare@gmail.com"
+              href="mailto:info.europeancare@gmail.com"
               className="text-brand-primary hover:underline"
             >
               info.europeancare@gmail.com
@@ -93,12 +93,12 @@ function Contact() {
             <span className="font-medium">Facebook:</span>
             <br />
             <a
-              href="https://www.facebook.com/europeancare.services"
+              href="https://www.facebook.com/europeancare.propertyservices"
               target="_blank"
               rel="noreferrer"
               className="text-brand-primary hover:underline"
             >
-              European Care &amp; Home Services
+              European Care &amp; Property Services
             </a>
           </p>
 
@@ -106,7 +106,7 @@ function Contact() {
             <span className="font-medium">Instagram:</span>
             <br />
             <a
-              href="https://www.instagram.com/europeancare.services"
+              href="https://www.instagram.com/europeancare.propertyservices"
               target="_blank"
               rel="noreferrer"
               className="text-brand-primary hover:underline"

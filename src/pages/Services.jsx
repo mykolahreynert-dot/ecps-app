@@ -64,11 +64,11 @@ function Services() {
       <section className="space-y-3">
         <h1 className="text-2xl font-bold text-slate-900">Services</h1>
         <p className="text-slate-700 text-sm md:text-base max-w-3xl">
-          European Care &amp; Home Services is designed for clients who value
-          quiet professionalism, trust and consistency. Below you will find the
-          main areas where we help homeowners, snowbirds, seniors and rental
-          hosts across Sarasota/Bradenton, Venice, North Port, the wider Tampa
-          Bay region and nearby areas.
+          European Care &amp; Property Services is designed for clients who
+          value quiet professionalism, trust and consistency. Below you will
+          find the main areas where we help homeowners, snowbirds, seniors and
+          rental hosts across Sarasota/Bradenton, Venice, North Port, the wider
+          Tampa Bay region and nearby areas.
         </p>
         <p className="text-xs text-slate-500 max-w-2xl">
           Each cooperation starts with a short conversation. We agree on what
