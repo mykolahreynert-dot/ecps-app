@@ -23,7 +23,8 @@ function Home() {
             <p className="text-slate-700 text-sm md:text-base max-w-xl">
               Discreet, reliable cleaning, property care and non-medical
               assistance for homeowners, snowbirds, seniors and rental hosts
-              across Bradenton, Venice, North Port and nearby areas.
+              across Sarasota/Bradenton/Venice, Tampa Bay region and nearby
+              areas.
             </p>
 
             {/* Key points */}
