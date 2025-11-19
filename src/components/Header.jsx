@@ -24,10 +24,12 @@ function Header() {
 
   return (
     <header className="border-b bg-white shadow-sm">
-      <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+      <div className="max-w-6xl mx-auto px-4 py-2 flex items-center justify-between">
         {/* Logo only – no tagline to save space */}
         <Link to="/" className="flex items-center gap-2">
-          <Logo />
+          <div className="flex items-center scale-110 md:scale-125 origin-left h-full">
+            <Logo />
+          </div>
         </Link>
 
         {/* Desktop navigation */}

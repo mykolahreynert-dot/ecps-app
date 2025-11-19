@@ -4,9 +4,7 @@ function Contact() {
   return (
     <div className="space-y-6">
       <div className="space-y-2">
-        <h1 className="text-2xl font-bold text-slate-900">
-          Contact
-        </h1>
+        <h1 className="text-2xl font-bold text-slate-900">Contact</h1>
         <p className="text-slate-700 text-sm md:text-base">
           You can reach European Care &amp; Home Services easily using the
           contact information below. We are happy to answer questions, help you
@@ -16,7 +14,6 @@ function Contact() {
 
       {/* Main contact grid */}
       <div className="grid gap-4 md:grid-cols-2">
-        
         {/* Address & service area */}
         <section className="rounded-xl border bg-white p-5 shadow-sm text-sm text-slate-700 space-y-2">
           <h2 className="text-base font-semibold text-slate-900">
@@ -41,7 +38,6 @@ function Contact() {
             <br />
             Monday – Sunday, 9:00 – 18:00
             <br />
-            
           </p>
         </section>
 
@@ -127,12 +123,9 @@ function Contact() {
           </h2>
           <ul className="list-disc pl-5 space-y-1">
             <li>
-              <span className="font-medium">General questions:</span>{" "}
-              email us at {" "}
-              <span className="font-medium">
-                info-europeancare@gmail.com
-              </span>
-              .
+              <span className="font-medium">General questions:</span> email us
+              at{" "}
+              <span className="font-medium">info.europeancare@gmail.com</span>.
             </li>
             <li>
               <span className="font-medium">Bookings:</span> use the Booking
