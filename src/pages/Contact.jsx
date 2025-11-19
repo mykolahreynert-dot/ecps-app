@@ -111,7 +111,7 @@ function Contact() {
               rel="noreferrer"
               className="text-brand-primary hover:underline"
             >
-              @europeancare.services
+              @europeancare.propertyservices
             </a>
           </p>
         </section>
