@@ -9,6 +9,7 @@ import Payment from "./pages/Payment.jsx";
 import Testimonials from "./pages/Testimonials.jsx";
 import About from "./pages/About.jsx";
 import Contact from "./pages/Contact.jsx";
+import Process from "./pages/Process.jsx";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/services" element={<Services />} />
+        <Route path="/process" element={<Process />} />
         <Route path="/booking" element={<Booking />} />
         <Route path="/payment" element={<Payment />} />
         <Route path="/testimonials" element={<Testimonials />} />

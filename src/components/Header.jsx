@@ -6,13 +6,13 @@ import Logo from "./Logo.jsx";
 const navLinks = [
   { to: "/", label: "Home" },
   { to: "/services", label: "Services" },
+  { to: "/process", label: "Our Process" },
   { to: "/booking", label: "Booking" },
   { to: "/payment", label: "Payment" },
   { to: "/testimonials", label: "Testimonials" },
   { to: "/about", label: "About" },
   { to: "/contact", label: "Contact" },
 ];
-
 
 function Header() {
   const [open, setOpen] = useState(false);
@@ -25,19 +25,13 @@ function Header() {
   return (
     <header className="border-b bg-white shadow-sm">
       <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
-        {/* Logo + region */}
-        <Link to="/" className="flex items-center gap-3">
+        {/* Logo only – no tagline to save space */}
+        <Link to="/" className="flex items-center gap-2">
           <Logo />
-          <div className="flex flex-col leading-tight">
-            <span className="text-xs text-slate-500 tracking-wide">
-              Serving multiple Florida regions
-
-            </span>
-          </div>
         </Link>
 
         {/* Desktop navigation */}
-        <nav className="hidden md:flex gap-2 items-center">
+        <nav className="hidden md:flex gap-1 items-center">
           {navLinks.map((item) => (
             <NavLink
               key={item.to}
@@ -50,14 +44,12 @@ function Header() {
             </NavLink>
           ))}
 
-          {/* Primary CTA: teal */}
           <Link
-          to="/booking"
-          className="ml-2 inline-flex items-center rounded-md bg-brand-primary px-3 py-2 text-sm font-semibold text-white hover:bg-brand-primaryDark transition"
->
-           Book a Service
+            to="/booking"
+            className="ml-2 inline-flex items-center rounded-md bg-brand-primary px-3 py-2 text-sm font-semibold text-white hover:bg-brand-primaryDark transition"
+          >
+            Book a Service
           </Link>
-
         </nav>
 
         {/* Mobile menu button */}
@@ -92,7 +84,7 @@ function Header() {
               onClick={() => setOpen(false)}
               className="block rounded-md bg-brand-primary px-3 py-2 text-center text-sm font-semibold text-white hover:bg-brand-primaryDark transition"
             >
-              Get a Quote
+              Book a Service
             </Link>
           </div>
         </nav>

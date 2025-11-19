@@ -16,7 +16,7 @@ function Home() {
               European-owned • Discreet • Detail-focused
             </span>
 
-            <h1 className="text-2xl md:text-3xl font-semibold leading-snug text-brand-primary">
+            <h1 className="text-lg md:text-xl font-semibold leading-snug text-brand-primary">
               European-quality care for your home, guests &amp; loved ones.
             </h1>
 
