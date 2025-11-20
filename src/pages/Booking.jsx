@@ -29,9 +29,35 @@ const PROPERTY_TYPES = [
 
 const TIME_WINDOWS = ["Morning", "Afternoon", "Evening", "Flexible"];
 
+// Format as (941) 555-1234 while typing
+const formatPhone = (value) => {
+  const digits = value.replace(/\D/g, ""); // only numbers
+
+  if (!digits) return "";
+
+  if (digits.length <= 3) {
+    return `(${digits}`;
+  }
+
+  if (digits.length <= 6) {
+    return `(${digits.slice(0, 3)}) ${digits.slice(3)}`;
+  }
+
+  return `(${digits.slice(0, 3)}) ${digits.slice(3, 6)}-${digits.slice(6, 10)}`;
+};
+
+// Convert formatted US number to E.164: +1XXXXXXXXXX
+const toE164 = (formatted) => {
+  const digits = formatted.replace(/\D/g, "");
+  if (digits.length === 10) {
+    return `+1${digits}`;
+  }
+  return null;
+};
+
 function Booking() {
   const [fullName, setFullName] = useState("");
-  const [phone, setPhone] = useState("");
+  const [phone, setPhone] = useState(""); // formatted phone for UI
   const [email, setEmail] = useState("");
   const [serviceType, setServiceType] = useState("");
   const [visitType, setVisitType] = useState("");
@@ -60,6 +86,24 @@ function Booking() {
       return;
     }
 
+    // Phone validation: must be 10 digits total
+    const digits = phone.replace(/\D/g, "");
+    if (digits.length !== 10) {
+      setStatusType("error");
+      setStatusMessage(
+        "Please enter a valid US phone number in the format (941) 555-1234."
+      );
+      return;
+    }
+
+    // Convert to E.164 for database storage
+    const phoneE164 = toE164(phone);
+    if (!phoneE164) {
+      setStatusType("error");
+      setStatusMessage("Phone number format is invalid.");
+      return;
+    }
+
     if (!consent) {
       setStatusType("error");
       setStatusMessage(
@@ -71,13 +115,13 @@ function Booking() {
     setSubmitting(true);
 
     try {
-      // 1) Insert client
+      // 1) Insert client with E.164 phone
       const { data: clientData, error: clientError } = await supabase
         .from("clients")
         .insert([
           {
             full_name: fullName,
-            phone,
+            phone: phoneE164, // store E.164
             email,
             preferred_contact_method: "phone",
           },
@@ -187,11 +231,16 @@ function Booking() {
                   </label>
                   <input
                     type="tel"
+                    inputMode="tel"
                     className="w-full rounded-md border border-slate-300 px-3 py-2 text-sm shadow-sm focus:border-brand-primary focus:outline-none focus:ring-1 focus:ring-brand-primary"
                     value={phone}
-                    onChange={(e) => setPhone(e.target.value)}
+                    onChange={(e) => setPhone(formatPhone(e.target.value))}
+                    placeholder="(941) 555-1234"
                     required
                   />
+                  <p className="text-[11px] text-slate-500">
+                    Please use the format: (941) 555-1234
+                  </p>
                 </div>
 
                 <div className="space-y-1 md:col-span-2">

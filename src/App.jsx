@@ -1,6 +1,7 @@
 // src/App.jsx
 import { Routes, Route } from "react-router-dom";
 import Layout from "./components/Layout.jsx";
+import AdminBookings from "./pages/AdminBookings.jsx";
 
 import Home from "./pages/Home.jsx";
 import Services from "./pages/Services.jsx";
@@ -17,6 +18,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/services" element={<Services />} />
+        <Route path="/admin/bookings" element={<AdminBookings />} />
+
         <Route path="/process" element={<Process />} />
         <Route path="/booking" element={<Booking />} />
         <Route path="/payment" element={<Payment />} />

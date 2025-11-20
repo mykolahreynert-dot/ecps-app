@@ -62,7 +62,7 @@ function Contact() {
             <span className="font-medium">WhatsApp:</span>
             <br />
             <a
-              href="https://wa.me/19415551234"
+              href="https://wa.me/+19412269305"
               target="_blank"
               rel="noreferrer"
               className="text-brand-primary hover:underline"
