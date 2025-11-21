@@ -4,53 +4,48 @@ import { Resend } from "resend";
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 export const handler = async (event) => {
-  if (event.httpMethod !== "POST") {
-    return {
-      statusCode: 405,
-      body: JSON.stringify({ error: "Method Not Allowed" }),
-    };
-  }
-
   try {
-    const data = JSON.parse(event.body || "{}");
-    const { name, phone, email, message } = data;
+    if (event.httpMethod !== "POST") {
+      return {
+        statusCode: 405,
+        body: JSON.stringify({ error: "Method not allowed" }),
+      };
+    }
+
+    const { name, phone, email, message } = JSON.parse(event.body);
 
     if (!name || !phone || !message) {
       return {
         statusCode: 400,
-        body: JSON.stringify({
-          error: "Missing required fields",
-        }),
+        body: JSON.stringify({ error: "Missing required fields" }),
       };
     }
 
+    // Construct email content
     const htmlContent = `
-      <h2>New contact request from website</h2>
+      <h2>New Contact Request</h2>
       <p><strong>Name:</strong> ${name}</p>
       <p><strong>Phone:</strong> ${phone}</p>
-      <p><strong>Email:</strong> ${email || "not provided"}</p>
-      <p><strong>Message:</strong></p>
-      <p>${message.replace(/\n/g, "<br />")}</p>
+      <p><strong>Email:</strong> ${email || "No email provided"}</p>
+      <p><strong>Message:</strong><br>${message}</p>
     `;
 
     const textContent = `
-New contact request from website
-
+New Contact Request
+--------------------
 Name: ${name}
 Phone: ${phone}
-Email: ${email || "not provided"}
-
+Email: ${email || "No email provided"}
 Message:
 ${message}
-    `.trim();
+    `;
 
-    // IMPORTANT:
-    // For now we send FROM Resend's test identity, TO your real address.
+    // Send using RESEND
     const { error } = await resend.emails.send({
       from: "European Care & Property Services <onboarding@resend.dev>",
-      to: "info.europeancare@gmail.com",
+      to: "info.europeancare@gmail.com", // ← Your business email
       reply_to: email || undefined,
-      subject: `New contact from ${name}`,
+      subject: `New contact form submission from ${name}`,
       html: htmlContent,
       text: textContent,
     });
@@ -59,9 +54,7 @@ ${message}
       console.error("Resend error:", error);
       return {
         statusCode: 500,
-        body: JSON.stringify({
-          error: "Failed to send email via Resend",
-        }),
+        body: JSON.stringify({ error: "Failed to send email via Resend" }),
       };
     }
 
