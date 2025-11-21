@@ -29,7 +29,7 @@ const PROPERTY_TYPES = [
 
 const TIME_WINDOWS = ["Morning", "Afternoon", "Evening", "Flexible"];
 
-// Format as (941) 555-1234 while typing
+// Format as (###) 555-1234 while typing
 const formatPhone = (value) => {
   const digits = value.replace(/\D/g, ""); // only numbers
 
@@ -91,7 +91,7 @@ function Booking() {
     if (digits.length !== 10) {
       setStatusType("error");
       setStatusMessage(
-        "Please enter a valid US phone number in the format (941) 555-1234."
+        "Please enter a valid US phone number in the format (###) 555-1234."
       );
       return;
     }
@@ -235,11 +235,11 @@ function Booking() {
                     className="w-full rounded-md border border-slate-300 px-3 py-2 text-sm shadow-sm focus:border-brand-primary focus:outline-none focus:ring-1 focus:ring-brand-primary"
                     value={phone}
                     onChange={(e) => setPhone(formatPhone(e.target.value))}
-                    placeholder="(941) 555-1234"
+                    placeholder="(###) 555-1234"
                     required
                   />
                   <p className="text-[11px] text-slate-500">
-                    Please use the format: (941) 555-1234
+                    Please use the format: (###) 555-1234
                   </p>
                 </div>
 

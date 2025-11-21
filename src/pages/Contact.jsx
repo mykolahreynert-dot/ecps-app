@@ -51,10 +51,10 @@ function Contact() {
             <span className="font-medium">Phone (US):</span>
             <br />
             <a
-              href="tel:+19415551234"
+              href="tel:+19412269305"
               className="text-brand-primary hover:underline"
             >
-              (941) 555-1234
+              (941) 226 9305
             </a>
           </p>
 
@@ -67,7 +67,7 @@ function Contact() {
               rel="noreferrer"
               className="text-brand-primary hover:underline"
             >
-              +1 941 555 1234
+              +1 941 226 9305
             </a>
           </p>
 

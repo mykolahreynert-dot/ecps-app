@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 import { supabase } from "../lib/supabaseClient";
 
-// Format "+19415551234" -> "(941) 555-1234"
+// Format "+19415551234" -> "(###) 555-1234"
 const formatE164Phone = (phone) => {
   if (!phone) return "";
   const digits = phone.replace(/\D/g, "");
