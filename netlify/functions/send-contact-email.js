@@ -19,7 +19,7 @@ export const handler = async (event) => {
 
     const { error } = await resend.emails.send({
       from: "European Care & Property Services <info.europeancare@gmail.com>",
-      to: "info.europeancare@gmail.com", // <-- your business inbox
+      to: "nikolaygreinert@gmail.com", // <-- your business inbox
       subject: `New contact from ${name}`,
       html: htmlContent,
     });
