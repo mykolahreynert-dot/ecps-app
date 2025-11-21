@@ -1,70 +1,67 @@
 // netlify/functions/send-contact-email.js
+import { Resend } from "resend";
 
-exports.handler = async (event) => {
-  // Only allow POST
+const resend = new Resend(process.env.RESEND_API_KEY);
+
+export const handler = async (event) => {
   if (event.httpMethod !== "POST") {
     return {
       statusCode: 405,
-      body: JSON.stringify({ error: "Method not allowed" }),
+      body: JSON.stringify({ error: "Method Not Allowed" }),
     };
   }
 
   try {
     const data = JSON.parse(event.body || "{}");
-    const { fullName, phone, email, message } = data;
+    const { name, phone, email, message } = data;
 
-    if (!fullName || !message) {
+    if (!name || !phone || !message) {
       return {
         statusCode: 400,
         body: JSON.stringify({
-          error: "Missing required fields: fullName and message.",
+          error: "Missing required fields",
         }),
       };
     }
 
-    const apiKey = process.env.RESEND_API_KEY;
-    if (!apiKey) {
-      console.error("Missing RESEND_API_KEY in environment");
-      return {
-        statusCode: 500,
-        body: JSON.stringify({ error: "Email service not configured." }),
-      };
-    }
+    const htmlContent = `
+      <h2>New contact request from website</h2>
+      <p><strong>Name:</strong> ${name}</p>
+      <p><strong>Phone:</strong> ${phone}</p>
+      <p><strong>Email:</strong> ${email || "not provided"}</p>
+      <p><strong>Message:</strong></p>
+      <p>${message.replace(/\n/g, "<br />")}</p>
+    `;
 
-    const toEmail = "info.europeancare@gmail.com";
+    const textContent = `
+New contact request from website
 
-    const textBody = `
-New contact form message from website:
-
-Name:  ${fullName}
-Phone: ${phone || "-"}
-Email: ${email || "-"}
+Name: ${name}
+Phone: ${phone}
+Email: ${email || "not provided"}
 
 Message:
 ${message}
-`.trim();
+    `.trim();
 
-    // Call Resend API
-    const response = await fetch("https://api.resend.com/emails", {
-      method: "POST",
-      headers: {
-        Authorization: `Bearer ${apiKey}`,
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        from: "European Care & Property Services <info.europeancare@gmail.com>",
-        to: [toEmail],
-        subject: `New contact message from ${fullName}`,
-        text: textBody,
-      }),
+    // IMPORTANT:
+    // For now we send FROM Resend's test identity, TO your real address.
+    const { error } = await resend.emails.send({
+      from: "European Care & Property Services <onboarding@resend.dev>",
+      to: "info.europeancare@gmail.com",
+      reply_to: email || undefined,
+      subject: `New contact from ${name}`,
+      html: htmlContent,
+      text: textContent,
     });
 
-    if (!response.ok) {
-      const errText = await response.text();
-      console.error("Resend error:", errText);
+    if (error) {
+      console.error("Resend error:", error);
       return {
         statusCode: 500,
-        body: JSON.stringify({ error: "Failed to send email." }),
+        body: JSON.stringify({
+          error: "Failed to send email via Resend",
+        }),
       };
     }
 
@@ -72,11 +69,11 @@ ${message}
       statusCode: 200,
       body: JSON.stringify({ success: true }),
     };
-  } catch (error) {
-    console.error("send-contact-email function error:", error);
+  } catch (err) {
+    console.error("Function error:", err);
     return {
       statusCode: 500,
-      body: JSON.stringify({ error: "Unexpected server error." }),
+      body: JSON.stringify({ error: "Server error" }),
     };
   }
 };
