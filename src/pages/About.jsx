@@ -1,183 +1,246 @@
-// src/pages/About.jsx (or wherever your About page lives)
+// src/pages/About.jsx
+import { Link } from "react-router-dom";
 
-export default function About() {
+function About() {
   return (
-    <main className="bg-emerald-50/40 min-h-screen">
-      {/* HERO */}
-      <section className="bg-white border-b">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16 grid gap-10 lg:grid-cols-[1.2fr,1fr] items-center">
-          <div>
-            <p className="text-sm font-semibold tracking-wide text-emerald-700 uppercase mb-2">
-              About European Care &amp; Property Services
-            </p>
-            <h1 className="text-3xl sm:text-4xl font-semibold text-slate-900 mb-4">
-              Premium cleaning, property watch and senior support you can depend
-              on.
-            </h1>
-            <p className="text-base sm:text-lg text-slate-700 mb-4 max-w-xl">
-              European Care &amp; Property Services was created to provide
-              reliable, trust-based support for homeowners, families, seniors
-              and short-term rental owners in the Sarasota / Bradenton / Venice
-              and Tampa Bay region.
-            </p>
-            <p className="text-base text-slate-700 mb-4 max-w-xl">
-              We combine European precision with a warm, human-centered
-              approach. Our team shows up when we say we will, follows
-              agreed-upon instructions carefully, and keeps you informed at
-              every step. The result: dependable service, thoughtful care and
-              genuine peace of mind.
-            </p>
-            <div className="mt-6 flex flex-wrap gap-3">
-              <span className="inline-flex items-center rounded-full bg-emerald-100 px-4 py-1 text-sm font-medium text-emerald-800">
-                ✔ Fully vetted, insured contractors
-              </span>
-              <span className="inline-flex items-center rounded-full bg-emerald-100 px-4 py-1 text-sm font-medium text-emerald-800">
-                ✔ Multilingual support (EN / DE / RU / UA)
-              </span>
-              <span className="inline-flex items-center rounded-full bg-emerald-100 px-4 py-1 text-sm font-medium text-emerald-800">
-                ✔ Designed for snowbirds, seniors &amp; hosts
-              </span>
-            </div>
-          </div>
+    <div className="space-y-10">
+      {/* HERO / INTRO */}
+      <section className="space-y-4 max-w-3xl">
+        <span className="inline-flex items-center rounded-full bg-brand-primary/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-brand-primary">
+          About European Care &amp; Property Services
+        </span>
 
-          {/* Right side – hero image placeholder */}
-          <div className="relative">
-            <div className="aspect-[4/3] rounded-2xl bg-gradient-to-br from-emerald-600 via-emerald-500 to-emerald-400 shadow-lg overflow-hidden flex items-center justify-center">
-              {/* Replace this block with a real image later */}
-              {/* Example: <img src="/images/about-hero.jpg" alt="Team supporting clients" className="w-full h-full object-cover" /> */}
-              <div className="text-white text-center px-6">
-                <p className="text-sm tracking-wide uppercase mb-2">
-                  Your home. Your loved ones. Your peace of mind.
-                </p>
-                <p className="text-2xl font-semibold mb-2">
-                  One trusted partner for cleaning, property watch &amp; senior
-                  support.
-                </p>
-                <p className="text-sm text-emerald-50/90">
-                  Placeholder visual — add a real photo of a tidy home, smiling
-                  client or team member here.
-                </p>
-              </div>
-            </div>
-          </div>
+        <h1 className="text-3xl md:text-4xl font-semibold tracking-tight text-slate-900">
+          European-quality care for your home, guests &amp; loved ones.
+        </h1>
+
+        <p className="text-sm md:text-base text-slate-700">
+          European Care &amp; Property Services was created for families,
+          seasonal residents and elderly parents who want things handled
+          quietly, reliably and with dignity – from detailed home cleaning and
+          property watch to calm, non-medical support for seniors.
+        </p>
+
+        <p className="text-xs md:text-sm text-slate-600">
+          We support homeowners and families in{" "}
+          <span className="font-medium">
+            Sarasota, Bradenton, Venice, Tampa Bay and surrounding areas
+          </span>{" "}
+          with a single, calmly coordinated point of contact who understands
+          both European standards and Florida’s practical reality.
+        </p>
+
+        <div className="flex flex-wrap gap-3 pt-1">
+          <Link
+            to="/booking"
+            className="inline-flex items-center rounded-full bg-brand-primary px-5 py-2.5 text-sm font-semibold text-white hover:bg-brand-primaryDark transition"
+          >
+            Start a booking request
+          </Link>
+          <Link
+            to="/contact"
+            className="inline-flex items-center rounded-full border border-brand-primary/40 bg-white px-5 py-2.5 text-sm font-semibold text-brand-primary hover:bg-brand-primary/5 transition"
+          >
+            Send a short message
+          </Link>
         </div>
       </section>
 
-      {/* THREE-COLUMN VALUE SECTION */}
-      <section className="py-12 lg:py-16">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid gap-8 md:grid-cols-3">
-            <div className="bg-white rounded-2xl shadow-sm border border-emerald-100 p-6 flex flex-col">
-              <div className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-full bg-emerald-100 text-emerald-800 text-xl">
-                {/* Icon placeholder */}
-                🏠
-              </div>
-              <h2 className="text-lg font-semibold text-slate-900 mb-2">
-                For homeowners &amp; families
-              </h2>
-              <p className="text-sm text-slate-700">
-                Regular residential cleaning, deep cleans and organizational
-                help so your home always feels calm, safe and welcoming – even
-                when life is busy.
-              </p>
-            </div>
+      {/* PHILOSOPHY / APPROACH */}
+      <section className="grid gap-6 md:grid-cols-[3fr,2fr] items-start">
+        <div className="space-y-4">
+          <h2 className="text-xl font-semibold text-slate-900">
+            A calm, European approach to practical care
+          </h2>
+          <p className="text-sm text-slate-700">
+            Many services promise to “do everything”, but families quickly
+            discover that coordination, communication and basic respect often
+            slip through the cracks. Our focus is more specific:{" "}
+            <span className="font-medium">
+              to become a trusted, long-term partner around your home and your
+              loved ones
+            </span>
+            , not a rotation of strangers.
+          </p>
+          <p className="text-sm text-slate-700">
+            We bring a European sense of order, punctuality and discretion to
+            everyday tasks – combined with the flexibility needed for seasonal
+            living, travel and changing family situations in Florida.
+          </p>
+          <p className="text-sm text-slate-700">
+            Whether you are a seasonal owner, an adult child arranging support
+            for parents, or a professional managing guests and visitors, our
+            goal is simple:{" "}
+            <span className="font-medium">
+              you should feel that things are handled properly, without drama
+              and without constant reminders.
+            </span>
+          </p>
+        </div>
 
-            <div className="bg-white rounded-2xl shadow-sm border border-emerald-100 p-6 flex flex-col">
-              <div className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-full bg-emerald-100 text-emerald-800 text-xl">
-                {/* Icon placeholder */}
-                🗝️
-              </div>
-              <h2 className="text-lg font-semibold text-slate-900 mb-2">
-                For snowbirds &amp; hosts
-              </h2>
-              <p className="text-sm text-slate-700">
-                Property watch, key holding and Airbnb turnovers with
-                checklists, photos and clear reporting — so you can be abroad
-                while your property is cared for as if you were here.
-              </p>
-            </div>
+        <aside className="rounded-2xl border border-slate-100 bg-white px-5 py-4 shadow-sm space-y-3 text-sm text-slate-700">
+          <h3 className="text-sm font-semibold text-slate-900">
+            Typical situations we quietly handle
+          </h3>
+          <ul className="space-y-2 text-xs md:text-sm">
+            <li className="flex gap-2">
+              <span className="mt-[3px] h-4 w-4 rounded-full bg-brand-primary/10 text-[10px] flex items-center justify-center text-brand-primary">
+                ✓
+              </span>
+              <span>
+                Seasonal owners who want a trusted key-holder and regular
+                property checks between visits.
+              </span>
+            </li>
+            <li className="flex gap-2">
+              <span className="mt-[3px] h-4 w-4 rounded-full bg-brand-primary/10 text-[10px] flex items-center justify-center text-brand-primary">
+                ✓
+              </span>
+              <span>
+                Adult children who live locally or abroad and want calm,
+                respectful support around their parents’ home and daily
+                routines.
+              </span>
+            </li>
+            <li className="flex gap-2">
+              <span className="mt-[3px] h-4 w-4 rounded-full bg-brand-primary/10 text-[10px] flex items-center justify-center text-brand-primary">
+                ✓
+              </span>
+              <span>
+                Busy professionals and hosts who need high-standard cleaning and
+                preparation for guests, visitors or short-term rentals.
+              </span>
+            </li>
+          </ul>
+          <p className="text-xs text-slate-500">
+            Every family and property is different. The common point is a desire
+            for quiet reliability and clear communication.
+          </p>
+        </aside>
+      </section>
 
-            <div className="bg-white rounded-2xl shadow-sm border border-emerald-100 p-6 flex flex-col">
-              <div className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-full bg-emerald-100 text-emerald-800 text-xl">
-                {/* Icon placeholder */}
-                👵
-              </div>
-              <h2 className="text-lg font-semibold text-slate-900 mb-2">
-                For seniors &amp; their families
-              </h2>
-              <p className="text-sm text-slate-700">
-                Respectful, non-medical support: errands, companionship, light
-                help at home and digital assistance, with clear boundaries and
-                reliable communication for relatives.
-              </p>
-            </div>
-          </div>
+      {/* FOUNDER / BACKGROUND */}
+      <section className="grid gap-6 md:grid-cols-[2.3fr,2fr] items-start">
+        <div className="space-y-4">
+          <h2 className="text-xl font-semibold text-slate-900">
+            Professional background with a personal understanding of care
+          </h2>
+          <p className="text-sm text-slate-700">
+            European Care &amp; Property Services is led by a founder with over
+            two decades of experience in HR, operations and working with people
+            in demanding environments. That background shapes how we choose
+            partners, how we communicate and how we design routines for homes
+            and for elderly clients.
+          </p>
+          <p className="text-sm text-slate-700">
+            At the same time, this is not an abstract “management concept”. The
+            approach is deeply personal: it is informed by real experience of
+            organising support for family, managing life across countries and
+            understanding how important it is for older people to feel
+            respected, not “handled”.
+          </p>
+          <p className="text-sm text-slate-700">
+            The combination of structured thinking and personal empathy means
+            you receive a service that is both{" "}
+            <span className="font-medium">well-organised</span> and{" "}
+            <span className="font-medium">human</span>. We pay attention to the
+            details that many services consider “extra”.
+          </p>
+        </div>
+
+        <div className="rounded-2xl border border-slate-100 bg-slate-50/70 px-5 py-4 text-sm text-slate-700 space-y-3">
+          <h3 className="text-sm font-semibold text-slate-900">
+            How this influences everyday work
+          </h3>
+          <ul className="space-y-2 text-xs md:text-sm">
+            <li>
+              • Clear expectations and written agreements where appropriate.
+            </li>
+            <li>
+              • Respectful communication with elderly clients and their
+              families.
+            </li>
+            <li>
+              • Reliability in timing – and honest updates if something changes.
+            </li>
+            <li>• Continuous small improvements based on your feedback.</li>
+          </ul>
+          <p className="text-xs text-slate-500">
+            The goal is not to promise perfection, but to build a relationship
+            where you know who is responsible – and you feel comfortable asking
+            for adjustments when life changes.
+          </p>
         </div>
       </section>
 
-      {/* STORY + TRUST SECTION */}
-      <section className="py-10 lg:py-14 bg-emerald-900 text-emerald-50">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 grid gap-8 lg:grid-cols-[1.4fr,1fr] items-center">
-          <div>
-            <h2 className="text-2xl font-semibold mb-3">
-              A European approach to care and reliability
-            </h2>
-            <p className="text-sm sm:text-base text-emerald-50/90 mb-3">
-              Behind ECPS is a European management background in HR, operations
-              and quality systems. We bring that same discipline into home and
-              property services: clear processes, checklists, supervision and
-              continuous improvement.
-            </p>
-            <p className="text-sm sm:text-base text-emerald-50/90 mb-3">
-              Every contractor is carefully selected, oriented on our standards
-              and monitored through feedback and photo documentation. You are
-              never “just another job” — you are a long-term client we want to
-              protect and support.
-            </p>
-          </div>
-
-          <div className="bg-emerald-800/70 border border-emerald-600 rounded-2xl p-5">
-            <h3 className="text-sm font-semibold tracking-wide uppercase mb-3 text-emerald-200">
-              What you can expect
+      {/* HOW WE WORK / LINK TO PROCESS */}
+      <section className="space-y-4">
+        <h2 className="text-xl font-semibold text-slate-900">
+          A clear, gentle way of working
+        </h2>
+        <p className="text-sm text-slate-700 max-w-3xl">
+          We follow a simple, three-step process that gives you clarity from the
+          beginning: an initial calm conversation, a tailored proposal with a
+          first visit, and then gentle adjustment as we learn your routines and
+          preferences.
+        </p>
+        <div className="grid gap-4 md:grid-cols-3">
+          <div className="rounded-2xl border border-slate-100 bg-white px-4 py-4 shadow-sm">
+            <div className="mb-2 text-xs font-semibold text-brand-primary">
+              Step 1
+            </div>
+            <h3 className="text-sm font-semibold text-slate-900 mb-1">
+              Calm, no-rush conversation
             </h3>
-            <ul className="space-y-2 text-sm text-emerald-50/90">
-              <li>• Clear communication before and after every visit</li>
-              <li>• Photos on request for property watch and turnovers</li>
-              <li>• Respect for your home, rules and privacy</li>
-              <li>• Flexible services that adapt as your needs change</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      {/* LANGUAGES / SERVICE AREA */}
-      <section className="py-10 lg:py-14">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 grid gap-6 lg:grid-cols-2">
-          <div className="bg-white rounded-2xl border border-emerald-100 p-6">
-            <h2 className="text-base font-semibold text-slate-900 mb-2">
-              Languages
-            </h2>
-            <p className="text-sm text-slate-700 mb-1">
-              Communication is available in:
-            </p>
-            <p className="text-sm font-semibold text-slate-900">
-              English, German, Russian, Ukrainian
+            <p className="text-xs text-slate-600">
+              You share what is happening now – your home, your schedule, your
+              parents’ situation. No pressure to decide everything in one call.
             </p>
           </div>
-
-          <div className="bg-white rounded-2xl border border-emerald-100 p-6">
-            <h2 className="text-base font-semibold text-slate-900 mb-2">
-              Service area
-            </h2>
-            <p className="text-sm text-slate-700">
-              We serve Sarasota, Bradenton, Venice, North Port and the wider
-              Tampa Bay region. For special requests outside this area, please
-              contact us — we&apos;ll do our best to help or recommend a trusted
-              partner.
+          <div className="rounded-2xl border border-slate-100 bg-white px-4 py-4 shadow-sm">
+            <div className="mb-2 text-xs font-semibold text-brand-primary">
+              Step 2
+            </div>
+            <h3 className="text-sm font-semibold text-slate-900 mb-1">
+              Tailored visits &amp; responsibilities
+            </h3>
+            <p className="text-xs text-slate-600">
+              You receive a clear outline of how we can help: visit frequency,
+              focus areas and communication lines – for cleaning, property watch
+              and senior support.
+            </p>
+          </div>
+          <div className="rounded-2xl border border-slate-100 bg-white px-4 py-4 shadow-sm">
+            <div className="mb-2 text-xs font-semibold text-brand-primary">
+              Step 3
+            </div>
+            <h3 className="text-sm font-semibold text-slate-900 mb-1">
+              Ongoing, thoughtful adjustment
+            </h3>
+            <p className="text-xs text-slate-600">
+              As trust builds, we adjust visits and details so the support fits
+              naturally into your life and, where relevant, your parents’
+              comfort and dignity.
             </p>
           </div>
         </div>
+        <div className="flex flex-wrap gap-3 pt-1">
+          <Link
+            to="/our-process"
+            className="inline-flex items-center rounded-full border border-brand-primary/40 bg-white px-5 py-2.5 text-sm font-semibold text-brand-primary hover:bg-brand-primary/5 transition"
+          >
+            View full process
+          </Link>
+          <Link
+            to="/booking"
+            className="inline-flex items-center rounded-full bg-brand-primary px-5 py-2.5 text-sm font-semibold text-white hover:bg-brand-primaryDark transition"
+          >
+            Start a booking request
+          </Link>
+        </div>
       </section>
-    </main>
+    </div>
   );
 }
+
+export default About;
